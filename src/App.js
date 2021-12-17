@@ -20,10 +20,12 @@ function App() {
         <Routes>
           <Route 
             path="/"
-            element={ <Home 
-            title={ title }
-          /> }/>
-          <Route path="/createProfile" element={ <CreateProfile/> }/>
+            element={ <Home/> }
+          />
+          <Route 
+            path="/createProfile" 
+            element={ <CreateProfile/> }
+          />
           <Route path="/profiles" element={ <Profiles/> }/>
         </Routes>
       </div>

@@ -1,7 +1,7 @@
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/logo.svg';
 import '../style/home.css';
 
-export default function Home(props) {
+export default function Home() {
     return (
         <div className="container">
             <div className="row mt-5">
@@ -9,7 +9,7 @@ export default function Home(props) {
                     <img src={ logo } alt="logo" width={ 600 }/>
                 </div>
                 <div className="col-sm-5">
-                    <h3>{ props.title }</h3>
+                    <h3>Proyecto React</h3>
                     <hr />
                     <p className="info-proyect">
                         El objetivo de este proyecto es realizar usando React, 
