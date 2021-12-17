@@ -10,7 +10,7 @@ export default function Form(props) {
             <hr />
             <Address/>
             <hr />
-            <h4>User data</h4>
+            <UserData/>
             <hr />
             <button className="btn btn-primary">Guardar</button>
         </form>

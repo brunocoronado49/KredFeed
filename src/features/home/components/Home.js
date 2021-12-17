@@ -12,7 +12,7 @@ export default function Home() {
                     <h3>Proyecto React</h3>
                     <hr />
                     <p className="info-proyect">
-                        El objetivo de este proyecto es realizar usando React, 
+                        El objetivo de este proyecto es realizar (con React) 
                         un formulario con datos de usuarios,
                         organizarlos de una manera que resulte comoda y de una 
                         buena experiencia para el usuario final.

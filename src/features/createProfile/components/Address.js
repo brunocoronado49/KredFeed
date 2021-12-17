@@ -43,16 +43,16 @@ export default function Addressing(props) {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Entidad Federativa o Estado"
+                        placeholder="Estado"
                     />
                 </div>
-            </div>
-            <div className="form-group p-2">
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="País"
-                />
+                <div className="form-group col-auto">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="País"
+                    />
+                </div>
             </div>
         </div>
     )
