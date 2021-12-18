@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form";
 import "../style/createProfile.css";
 import Form from "./Form";
 

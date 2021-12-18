@@ -1,18 +1,25 @@
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { useForm, useEffect } from 'react-hook-form';
 import CompanyData from './CompanyData';
 import Address from './Address';
 import UserData from './UserData';
+import UserAddress from './UserAddress';
+import BancAccount from './BancAccount';
 
 export default function Form(props) {
     return (
-        <form action="">
-            <CompanyData/>
+        <form>
+            <CompanyData />
             <hr />
-            <Address/>
+            <Address />
             <hr />
-            <UserData/>
+            <UserData />
             <hr />
-            <button className="btn btn-primary">Guardar</button>
+            <UserAddress />
+            <hr />
+            <BancAccount />
+            <hr />
+            <button type="submit" className="btn btn-primary">Guardar</button>
         </form>
     )
 }
