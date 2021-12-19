@@ -12,10 +12,10 @@ export default function Navigation(props) {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/createProfile">Create Profile</Link>
+                            <Link className="nav-link" to="/createProfile">Nuevos datos</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/profiles">Profiles</Link>
+                            <Link className="nav-link" to="/profiles">Perfiles</Link>
                         </li>
                     </ul>
                 </div>

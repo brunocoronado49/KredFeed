@@ -1,23 +1,22 @@
 import { useForm } from "react-hook-form";
-import { useState } from 'react';
+import { useState, Fragment} from 'react';
 
 export default function BancAccount(props) {
-
-    const[bancAccountState, setBancAccountState] = useState(props)
-
     return (
-        <div>
-            <h4>Banc account</h4>
+        <Fragment>
+            <h4>Cuenta de banco</h4>
             <div className="form-group p-2">
                 <input type="text" className="form-control" 
                 placeholder="CLAVE" 
-                value={bancAccountState.clave}/>
+                onChange={props.updateValueEvent}
+                name={props.claveBanco}/>
             </div>
             <div className="form-group p-2">
                 <input type="text" className="form-control" 
                 placeholder="Banco" 
-                value={bancAccountState.banco}/>
+                onChange={props.updateValueEvent}
+                name={props.banco}/>
             </div>
-        </div>
+        </Fragment>
     )
 }

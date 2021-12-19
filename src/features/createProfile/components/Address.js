@@ -1,22 +1,15 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { Fragment } from 'react'
 
 export default function Addressing(props) {
-
-    const [companyAddressState, setCompanyAddress] = useState(props)
-
-    const updateAddressValue = (event) => {
-        setCompanyAddress(event.target.value)
-    }
-
     return (
-        <div>
-            <h4>Company address</h4>
+        <Fragment>
+            <h4>Dirección de la compañia</h4>
             <div className="form-group p-2">
                 <input type="text" className="form-control" 
                     placeholder="Calle o Avenida" 
-                    value={companyAddressState.calleAvenida}
-                    onChange={updateAddressValue}
+                    onChange={props.updateValueEvent}
+                    name={props.calleCompany}
                 />
             </div>
             <div className="row g-3 p-2">
@@ -25,15 +18,15 @@ export default function Addressing(props) {
                         type="number"
                         className="form-control"
                         placeholder="No. Exterior"
-                        value={companyAddressState.noExterior}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.noExteriorCompany}
                     />
                 </div>
                 <div className="form-group col-auto">
                     <input type="number" className="form-control" 
                         placeholder="No. Interior" 
-                        value={companyAddressState.noInterior}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.noInteriorCompany}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -41,8 +34,8 @@ export default function Addressing(props) {
                         type="number"
                         className="form-control"
                         placeholder="Código postal"
-                        value={companyAddressState.codigoPostal}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.codigoPostalCompany}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -50,8 +43,8 @@ export default function Addressing(props) {
                         type="text"
                         className="form-control"
                         placeholder="Colonia o Urbanización"
-                        value={companyAddressState.colonia}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.coloniaCompany}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -59,8 +52,8 @@ export default function Addressing(props) {
                         type="text"
                         className="form-control"
                         placeholder="Ciudad o Población"
-                        value={companyAddressState.ciudad}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.ciudadCompany}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -68,8 +61,8 @@ export default function Addressing(props) {
                         type="text"
                         className="form-control"
                         placeholder="Estado"
-                        value={companyAddressState.estado}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.estadoCompany}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -77,11 +70,11 @@ export default function Addressing(props) {
                         type="text"
                         className="form-control"
                         placeholder="País"
-                        value={companyAddressState.pais}
-                        onChange={updateAddressValue}
+                        onChange={props.updateValueEvent}
+                        name={props.paisCompany}
                     />
                 </div>
             </div>
-        </div>
+        </Fragment>
     )
 }

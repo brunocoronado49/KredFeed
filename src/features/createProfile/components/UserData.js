@@ -1,25 +1,18 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { Fragment } from 'react';
 
 export default function UserData(props) {
-
-    const [userDataState, setUserDataState] = useState(props);
-
-    const updateUserDataValue = (event) => {
-        setUserDataState(event.target.value)
-    }
-
     return (
-        <div>
-            <h4>User data</h4>
+        <Fragment>
+            <h4>Datos de usuario</h4>
             <div className="form-group p-2">
                 <label>Comprobante de domicilio</label>
                 <input 
                     type="file"
                     className="form-control"
                     placeholder="Comprobante de domicilio"
-                    value={userDataState.comprobanteDomicilio}
-                    onChange={updateUserDataValue}
+                    onChange={props.updateValueEvent}
+                    name={props.comprobanteDomicilio}
                 />
             </div>
             <div className="row g-3 p-2">
@@ -28,8 +21,8 @@ export default function UserData(props) {
                         type="number"
                         className="form-control"
                         placeholder="Número Telefónico"
-                        value={userDataState.telefono}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.telefono}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -37,8 +30,8 @@ export default function UserData(props) {
                         type="email"
                         className="form-control"
                         placeholder="Correo electrónico"
-                        value={userDataState.correo}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.correo}
                     />
                 </div>
                 <h5>Representante legal</h5>
@@ -47,26 +40,27 @@ export default function UserData(props) {
                         type="text"
                         className="form-control"
                         placeholder="Nombre"
-                        value={userDataState.nombre}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.nombre}
                     />
                 </div>
                 <div className="form-group col-auto">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Género"
-                        value={userDataState.genero}
-                        onChange={updateUserDataValue}
-                    />
+                    <select 
+                    name={props.genero}
+                    className="form-control"
+                    onChange={props.updateValueEvent}>
+                        <option value="Genero">Genero</option>
+                        <option value="Masculino" name={props.genero}>Masculino</option>
+                        <option value="Femenino" name={props.genero}>Femenino</option>
+                    </select>
                 </div>
                 <div className="form-group col-auto">
                     <input
                         type="text"
                         className="form-control"
                         placeholder="País de nacimiento"
-                        value={userDataState.paisNacimiento}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.paisNacimiento}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -75,8 +69,8 @@ export default function UserData(props) {
                         type="date"
                         className="form-control"
                         placeholder="Fecha de nacimiento"
-                        value={userDataState.fechaNacimiento}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.fechaNacimiento}
                     />
                 </div>
                 <div className="form-group">
@@ -84,8 +78,8 @@ export default function UserData(props) {
                         type="text"
                         className="form-control"
                         placeholder="Entidad federativa de nacimiento"
-                        value={userDataState.entidadFederativa}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.entidadFederativa}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -93,8 +87,8 @@ export default function UserData(props) {
                         type="text"
                         className="form-control"
                         placeholder="Nacionalidad"
-                        value={userDataState.nacionalidad}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.nacionalidad}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -102,8 +96,8 @@ export default function UserData(props) {
                         type="text"
                         className="form-control"
                         placeholder="CURP"
-                        value={userDataState.curp}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.curp}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -111,26 +105,29 @@ export default function UserData(props) {
                         type="text"
                         className="form-control"
                         placeholder="RFC"
-                        value={userDataState.rfc}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.rfc}
                     />
                 </div>
                 <div className="form-group col-auto">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Estado civil"
-                        value={userDataState.estadoCivil}
-                        onChange={updateUserDataValue}
-                    />
+                <select 
+                    name={props.estadoCivil}
+                    className="form-control"
+                    onChange={props.updateValueEvent}>
+                        <option name={props.estadoCivil} value="Estado civil">Estado civil</option>
+                        <option name={props.estadoCivil} value="Solter@">Solter@</option>
+                        <option name={props.estadoCivil} value="Casad@">Casad@</option>
+                        <option name={props.estadoCivil} value="Divorciad@">Divorciad@</option>
+                        <option name={props.estadoCivil} value="Viud@">Viudo@</option>
+                    </select>
                 </div>
                 <div className="form-group col-auto">
                     <input
                         type="email"
                         className="form-control"
                         placeholder="Correo"
-                        value={userDataState.correo}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.correoLegal}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -138,8 +135,8 @@ export default function UserData(props) {
                         type="number"
                         className="form-control"
                         placeholder="Teléfono"
-                        value={userDataState.telefono}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.telefonoLegal}
                     />
                 </div>
                 <div className="form-group col-auto">
@@ -148,12 +145,12 @@ export default function UserData(props) {
                         type="file"
                         className="form-control"
                         placeholder="Documento de identificación"
-                        value={userDataState.documentoIdentificacion}
-                        onChange={updateUserDataValue}
+                        onChange={props.updateValueEvent}
+                        name={props.documentoIdentificacion}
                     />
                 </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
 

@@ -1,24 +1,17 @@
-import { useForm } from "react-hook-form";
-import { useState } from 'react';
+import { Fragment } from 'react';
+import { useForm} from 'react-hook-form';
 
 export default function CompanyData(props) {
-
-  const [companyDataState, setCompanyDataState] = useState(props);
-
-  const updateDataCompanyValue = (event) => {
-    setCompanyDataState(event.target.value);
-  }
-
   return (
-    <div>
-      <h4>Company data</h4>
+    <Fragment>
+      <h4>Datos de la compañia</h4>
       <div className="form-group p-2">
         <input
           type="text"
           className="form-control"
           placeholder="Razón social"
-          value={companyDataState.razonSocial}
-          onChange={updateDataCompanyValue}
+          onChange={props.updateValueEvent}
+          name={props.razonSocial}
         />
       </div>
       <div className="row g-3 p-2">
@@ -27,8 +20,8 @@ export default function CompanyData(props) {
             type="text"
             className="form-control"
             placeholder="Nombre comercial"
-            value={companyDataState.nombreComerial}
-            onChange={updateDataCompanyValue}
+            onChange={props.updateValueEvent}
+            name={props.nombreComerial}
           />
         </div>
         <div className="form-group col-auto">
@@ -36,14 +29,17 @@ export default function CompanyData(props) {
             type="text"
             className="form-control"
             placeholder="Nacionalidad"
-            value={companyDataState.nacionalidad}
-            onChange={updateDataCompanyValue}
+            onChange={props.updateValueEvent}
+            name={props.nacionalidadComapny}
           />
         </div>
         <div className="form-group col-auto">
-          <input type="text" className="form-control" 
-          placeholder="RFC" value={companyDataState.rfc}
-          onChange={updateDataCompanyValue}/>
+          <input 
+            type="text" className="form-control" 
+            placeholder="RFC"
+            onChange={props.updateValueEvent}
+            name={props.rfcCompany}
+          />
         </div>
       </div>
       <div className="row g-3 p-2">
@@ -52,14 +48,17 @@ export default function CompanyData(props) {
             type="text"
             className="form-control"
             placeholder="Régimen fiscal"
-            value={companyDataState.regimenFiscal}
-            onChange={updateDataCompanyValue}
+            onChange={props.updateValueEvent}
+            name={props.regimenFiscal}
           />
         </div>
         <div className="form-group col-auto">
-          <input type="text" className="form-control" 
-          placeholder="Industria" value={companyDataState.industria}
-          onChange={updateDataCompanyValue}/>
+          <input 
+            type="text" className="form-control" 
+            placeholder="Industria"
+            name={props.industria}
+            onChange={props.updateValueEvent}
+          />
         </div>
         <div className="form-group col-auto">
           <label>Fecha de constitución</label>
@@ -67,11 +66,11 @@ export default function CompanyData(props) {
             type="date"
             className="form-control"
             placeholder="Fecha de constitución"
-            value={companyDataState.fechaConstitucion}
-            onChange={updateDataCompanyValue}
+            onChange={props.updateValueEvent}
+            name={props.fechaConstitucion}
           />
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
