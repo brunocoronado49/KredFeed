@@ -14,9 +14,6 @@ export default function Navigation(props) {
                         <li className="nav-item">
                             <Link className="nav-link" to="/createProfile">Nuevos datos</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/profiles">Perfiles</Link>
-                        </li>
                     </ul>
                 </div>
             </div>

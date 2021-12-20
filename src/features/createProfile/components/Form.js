@@ -82,6 +82,7 @@ export default function Form(props) {
         handleChange,
       }) => (
         <form onSubmit={handleSubmit}>
+          <h1>{data.ciudad}</h1>
           <CompanyData
             updateValueEvent={handleChange}
             razonSocial="razonSocial"
