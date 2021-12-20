@@ -25,8 +25,11 @@ const validation = (values) => {
   // Datos del usuario
   if(!values.comprobanteDomicilio) errors.comprobanteDomicilio = "Domicilio requerido"
   if(!values.telefono) errors.telefono = "Telefono requerido"
-  if(!values.correo) errors.correo = "Correo requerido"
-  // Validar correo
+  if(!values.correo) {
+    errors.correo = "Correo requerido"
+  } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.correo)) {
+    errors.correo = 'Correo inválido, ingresa uno correcto';
+  }
   if(!values.nombre) errors.nombre = "Nombre requerido"
   if(!values.genero) errors.genero = "Género requerido"
   if(!values.paisNacimiento) errors.paisNacimiento = "País requerido"
@@ -36,8 +39,11 @@ const validation = (values) => {
   if(!values.curp) errors.curp = "CURP requerida"
   if(!values.rfc) errors.rfc = "RFC requerido"
   if(!values.estadoCivil) errors.estadoCivil = "Estado civil requerido"
-  if(!values.correoLegal) errors.correoLegal = "Correo legal requerido"
-  // Validar correo
+  if(!values.correoLegal) {
+    errors.correoLegal = "Correo legal requerido"
+  } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.correo)) {
+    errors.correoLegal = "Correo inválido, ingresa uno correcto"
+  }
   if(!values.telefonoLegal) errors.telefonoLegal = "Teléfono requerido"
   if(!values.documentoIdentificacion) errors.documentoIdentificacion = "Documento requerido"
 

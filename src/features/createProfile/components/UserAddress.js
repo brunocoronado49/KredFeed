@@ -85,28 +85,35 @@ export default function USerAddresses(props) {
         </div>
 
         <div className="form-group col-auto">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Estado"
+          <select 
+            className="form-control"  
             onChange={props.updateValueEvent}
             name={props.estado}
             value={props.valuesestado}
             onBlur={props.handleBlur}
-          />
+          >
+            <option value="Estado">Estado</option>
+            <option value="Ags">Aguascalientes</option>
+            <option value="Jal">Jalisco</option>
+            <option value="slp">San Luis Potosí</option>
+            <option value="Zac">Zacatecas</option>
+          </select>
           <span className="text-danger">{props.errorsestado}</span>
         </div>
 
         <div className="form-group col-auto">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="País"
-            onChange={props.updateValueEvent}
-            name={props.pais}
-            value={props.valuespais}
-            onBlur={props.handleBlur}
-          />
+          <select 
+              name={props.pais}
+              className="form-control"
+              onChange={props.updateValueEvent}
+              value={props.valuespais}
+              onBlur={props.handleBlur}
+            >
+              <option value="País">País</option>
+              <option value="México">México</option>
+              <option value="EU">Estados Unidos</option>
+              <option value="Canada">Canada</option>
+          </select>
           <span className="text-danger">{props.errorspais}</span>
         </div>
       </div>

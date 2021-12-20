@@ -85,28 +85,35 @@ export default function Addressing(props) {
         </div>
 
         <div className="form-group col-auto">
-          <input
-            type="text"
+          <select
             className="form-control"
-            placeholder="Estado"
             onChange={props.updateValueEvent}
             name={props.estadoCompany}
             value={props.valuesestadoCompany}
             onBlur={props.handleBlur}
-          />
+          >
+            <option value="Estado">Estado</option>
+            <option value="Ags">Aguascalientes</option>
+            <option value="Jal">Jalisco</option>
+            <option value="slp">San Luis Potosí</option>
+            <option value="Zac">Zacatecas</option>
+          </select>
           <span className="text-danger">{props.errorsestadoCompany}</span>
         </div>
 
         <div className="form-group col-auto">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="País"
-            onChange={props.updateValueEvent}
+          <select
             name={props.paisCompany}
+            className="form-control"
+            onChange={props.updateValueEvent}
             value={props.valuespaisCompany}
             onBlur={props.handleBlur}
-          />
+          >
+            <option value="País">País</option>
+            <option value="México">México</option>
+            <option value="EU">Estados Unidos</option>
+            <option value="Canada">Canada</option>
+          </select>
           <span className="text-danger">{props.errorspaisCompany}</span>
         </div>
       </div>
