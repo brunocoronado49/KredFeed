@@ -11,8 +11,11 @@ export default function CompanyData(props) {
           placeholder="Razón social"
           onChange={props.updateValueEvent}
           name={props.razonSocial}
+          value={props.valuesRazonSocial}
+          onBlur={props.handleBlur}
         />
       </div>
+      <span className="text-danger">{props.errorsRazonSocial}</span>
       <div className="row g-3 p-2">
         <div className="form-group col-auto">
           <input
@@ -21,8 +24,11 @@ export default function CompanyData(props) {
             placeholder="Nombre comercial"
             onChange={props.updateValueEvent}
             name={props.nombreComerial}
+            value={props.valuesNombreComercial}
+            onBlur={props.handleBlur}
           />
         </div>
+        <span className="text-danger">{props.errorsNombreComercial}</span>
         <div className="form-group col-auto">
           <input
             type="text"
@@ -30,16 +36,22 @@ export default function CompanyData(props) {
             placeholder="Nacionalidad"
             onChange={props.updateValueEvent}
             name={props.nacionalidadComapny}
+            value={props.valuesNacionalidadCompany}
+            onBlur={props.handleBlur}
           />
         </div>
+        <span className="text-danger">{props.errorsNacionalidadComapny}</span>
         <div className="form-group col-auto">
           <input 
             type="text" className="form-control" 
             placeholder="RFC"
             onChange={props.updateValueEvent}
             name={props.rfcCompany}
+            value={props.valuesRfcCompany}
+            onBlur={props.handleBlur}
           />
         </div>
+        <span className="text-danger">{props.errorsRfcCompany}</span>
       </div>
       <div className="row g-3 p-2">
         <div className="form-group col-auto">
@@ -49,16 +61,22 @@ export default function CompanyData(props) {
             placeholder="Régimen fiscal"
             onChange={props.updateValueEvent}
             name={props.regimenFiscal}
+            value={props.valuesRegimenFiscal}
+            onBlur={props.handleBlur}
           />
         </div>
+        <span className="text-danger">{props.errorsRegimenFiscal}</span>
         <div className="form-group col-auto">
           <input 
             type="text" className="form-control" 
             placeholder="Industria"
             name={props.industria}
             onChange={props.updateValueEvent}
+            value={props.valuesIndustria}
+            onBlur={props.handleBlur}
           />
         </div>
+        <span className="text-danger">{props.errorsIndustria}</span>
         <div className="form-group col-auto">
           <label>Fecha de constitución</label>
           <input
@@ -67,8 +85,11 @@ export default function CompanyData(props) {
             placeholder="Fecha de constitución"
             onChange={props.updateValueEvent}
             name={props.fechaConstitucion}
+            value={props.valuesFechaConstitucion}
+            onBlur={props.handleBlur}
           />
         </div>
+        <span className="text-danger">{props.errorsFechaConstitucion}</span>
       </div>
     </Fragment>
   );

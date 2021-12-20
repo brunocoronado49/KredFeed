@@ -1,5 +1,4 @@
 import { Fragment} from 'react';
-import { useForm } from "react-hook-form";
 
 export default function BancAccount(props) {    
     return (
@@ -11,12 +10,11 @@ export default function BancAccount(props) {
                     placeholder="CLAVE"
                     onChange={props.updateValueEvent}
                     name={props.claveBanco}
-                    values={props.valueClaveBanco}
-                    invalid={props.errorsClaveBanco && props.touchedClaveBanco}
+                    value={props.valuesClaveBanco}
                     onBlur={props.handleBlur}
                 />
             </div>
-            <span>{props.errorsClaveBanco}</span>
+            <span className="text-danger">{props.errorsClaveBanco}</span>
             <div className="form-group p-2">
                 <input 
                     type="text" 
@@ -24,12 +22,11 @@ export default function BancAccount(props) {
                     placeholder="Banco" 
                     onChange={props.updateValueEvent}
                     name={props.banco}
-                    value={props.valueBanco}
-                    invalid={props.errorsBanco && props.touchedBanco}
+                    value={props.valuesBanco}
                     onBlur={props.handleBlur}
                 />
             </div>
-            <span>{props.errorsBanco}</span>
+            <span className="text-danger">{props.errorsBanco}</span>
         </Fragment>
     )
 }

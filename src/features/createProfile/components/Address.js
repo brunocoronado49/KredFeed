@@ -10,8 +10,11 @@ export default function Addressing(props) {
                     placeholder="Calle o Avenida" 
                     onChange={props.updateValueEvent}
                     name={props.calleCompany}
+                    value={props.valuesCalleCompany}
+                    onBlur={props.handleBlur}
                 />
             </div>
+            <span className="text-danger">{props.errorsCalleCompany}</span>
             <div className="row g-3 p-2">
                 <div className="form-group col-auto">
                     <input
@@ -20,15 +23,21 @@ export default function Addressing(props) {
                         placeholder="No. Exterior"
                         onChange={props.updateValueEvent}
                         name={props.noExteriorCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
                 <div className="form-group col-auto">
                     <input type="number" className="form-control" 
                         placeholder="No. Interior" 
                         onChange={props.updateValueEvent}
                         name={props.noInteriorCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
                 <div className="form-group col-auto">
                     <input
                         type="number"
@@ -36,8 +45,11 @@ export default function Addressing(props) {
                         placeholder="Código postal"
                         onChange={props.updateValueEvent}
                         name={props.codigoPostalCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
                 <div className="form-group col-auto">
                     <input
                         type="text"
@@ -45,8 +57,11 @@ export default function Addressing(props) {
                         placeholder="Colonia o Urbanización"
                         onChange={props.updateValueEvent}
                         name={props.coloniaCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
                 <div className="form-group col-auto">
                     <input
                         type="text"
@@ -54,8 +69,11 @@ export default function Addressing(props) {
                         placeholder="Ciudad o Población"
                         onChange={props.updateValueEvent}
                         name={props.ciudadCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
                 <div className="form-group col-auto">
                     <input
                         type="text"
@@ -63,8 +81,11 @@ export default function Addressing(props) {
                         placeholder="Estado"
                         onChange={props.updateValueEvent}
                         name={props.estadoCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
                 <div className="form-group col-auto">
                     <input
                         type="text"
@@ -72,8 +93,11 @@ export default function Addressing(props) {
                         placeholder="País"
                         onChange={props.updateValueEvent}
                         name={props.paisCompany}
+                        value={props.valuesCalleCompany}
+                        onBlur={props.handleBlur}
                     />
                 </div>
+                <span className="text-danger">{props.errorsCalleCompany}</span>
             </div>
         </Fragment>
     )
