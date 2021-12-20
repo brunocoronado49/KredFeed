@@ -83,7 +83,7 @@ export default function Form(props) {
       }) => (
         <form onSubmit={handleSubmit}>
           <CompanyData
-            updateValueEvent={updateValueEvent}
+            updateValueEvent={handleChange}
             razonSocial="razonSocial"
             nombreComerial="nombreComerial"
             nacionalidadComapny="nacionalidadComapny"
@@ -109,7 +109,7 @@ export default function Form(props) {
           />
           <hr />
           <Address
-            updateValueEvent={updateValueEvent}
+            updateValueEvent={handleChange}
             calleCompany="calleCompany"
             noExteriorCompany="noExteriorCompany"
             noInteriorCompany="noInteriorCompany"
@@ -118,10 +118,27 @@ export default function Form(props) {
             ciudadCompany="ciudadCompany"
             estadoCompany="estadoCompany"
             paisCompany="paisCompany"
+            valuesCalleCompany={values.calleCompany}
+            errorsCalleCompany={errors.calleCompany}
+            valuesnoExteriorCompany={values.noExteriorCompany}
+            errorsnoExteriorCompany={errors.noExteriorCompany}
+            valuesnoInteriorCompany={values.noInteriorCompany}
+            errorsnoInteriorCompany={errors.noInteriorCompany}
+            valuescodigoPostalCompany={values.codigoPostalCompany}
+            errorscodigoPostalCompany={errors.codigoPostalCompany}
+            valuescoloniaCompany={values.coloniaCompany}
+            errorscoloniaCompany={errors.coloniaCompany}
+            valuesciudadCompany={values.ciudadCompany}
+            errorsciudadCompany={errors.ciudadCompany}
+            valuesestadoCompany={values.estadoCompany}
+            errorsestadoCompany={errors.estadoCompany}
+            valuespaisCompany={values.paisCompany}
+            errorspaisCompany={errors.paisCompany}
+            handleBlur={handleBlur}
           />
           <hr />
           <UserData
-            updateValueEvent={updateValueEvent}
+            updateValueEvent={handleChange}
             comprobanteDomicilio="comprobanteDomicilio"
             telefono="telefono"
             correo="correo"
@@ -137,10 +154,41 @@ export default function Form(props) {
             correoLegal="correoLegal"
             telefonoLegal="telefonoLegal"
             documentoIdentificacion="documentoIdentificacion"
+            valuescomprobanteDomicilio={values.comprobanteDomicilio}
+            errorscomprobanteDomicilio={errors.comprobanteDomicilio}
+            valuestelefono={values.telefono}
+            errorstelefono={errors.telefono}
+            valuescorreo={values.correo}
+            errorscorreo={errors.correo}
+            valuesnombre={values.nombre}
+            errorsnombre={errors.nombre}
+            valuesgenero={values.genero}
+            errorsgenero={errors.genero}
+            valuespaisNacimiento={values.paisNacimiento}
+            errorspaisNacimiento={errors.paisNacimiento}
+            valuesfechaNacimiento={values.fechaNacimiento}
+            errorsfechaNacimiento={errors.fechaNacimiento}
+            valuesentidadFederativa={values.entidadFederativa}
+            errorsentidadFederativa={errors.entidadFederativa}
+            valuesnacionalidad={values.nacionalidad}
+            errorsnacionalidad={errors.nacionalidad}
+            valuescurp={values.curp}
+            errorscurp={errors.curp}
+            valuesrfc={values.rfc}
+            errorsrfc={errors.rfc}
+            valuesestadoCivil={values.estadoCivil}
+            errorsestadoCivil={errors.estadoCivil}
+            valuescorreoLegal={values.correoLegal}
+            errorscorreoLegal={errors.correoLegal}
+            valuestelefonoLegal={values.telefonoLegal}
+            errorstelefonoLegal={errors.telefonoLegal}
+            valuesdocumentoIdentificacion={values.documentoIdentificacion}
+            errorsdocumentoIdentificacion={errors.documentoIdentificacion}
+            handleBlur={handleBlur}
           />
           <hr />
           <UserAddress
-            updateValueEvent={updateValueEvent}
+            updateValueEvent={handleChange}
             calle="calle"
             noExterior="noExterior"
             noInterior="noInterior"
@@ -149,6 +197,23 @@ export default function Form(props) {
             ciudad="ciudad"
             estado="estado"
             pais="pais"
+            valuescalle={values.calle}
+            errorscalle={errors.calle}
+            valuesnoExterior={values.noExterior}
+            errorsnoExterior={errors.noExterior}
+            valuesnoInterior={values.noInterior}
+            errorsnoInterior={errors.noInterior}
+            valuescodigoPostal={values.codigoPostal}
+            errorscodigoPostal={errors.codigoPostal}
+            valuescolonia={values.colonia}
+            errorscolonia={errors.colonia}
+            valuesciudad={values.ciudad}
+            errorsciudad={errors.ciudad}
+            valuesestado={values.estado}
+            errorsestado={errors.estado}
+            valuespais={values.pais}
+            errorspais={errors.pais}
+            handleBlur={handleBlur}
           />
           <hr />
           <BancAccount
