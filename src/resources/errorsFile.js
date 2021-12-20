@@ -1,11 +1,7 @@
-import errorsAddress from './errors';
+import errorsAddress from './errorsAddress';
 
 const validation = (values) => {
   let errors = {};
-
-  // Cuenta de banco
-  if (!values.banco) errors.banco = "Bango obligatorio";
-  if (!values.claveBanco) errors.claveBanco = "Clave de bando obligatoria";
 
   // Datos de la compañia
   if(!values.razonSocial) errors.razonSocial = "Razon social obligatorio"
@@ -26,20 +22,11 @@ const validation = (values) => {
   if(!values.estadoCompany) errors.estadoCompany = errorsAddress.errorEstado
   if(!values.paisCompany) errors.paisCompany = errorsAddress.errorPais
 
-  // Direccion de usuario
-  if(!values.calle) errors.calle = errorsAddress.errorCalle
-  if(!values.noExterior) errors.noExterior = errorsAddress.errorNoExterior 
-  if(!values.noInterior) errors.noInterior = errorsAddress.errorNoInterior
-  if(!values.codigoPostal) errors.codigoPostal = errorsAddress.errorCodigoPostal
-  if(!values.colonia) errors.colonia = errorsAddress.errorColonia
-  if(!values.ciudad) errors.ciudad = errorsAddress.errorCiudad
-  if(!values.estado) errors.estado = errorsAddress.errorEstado
-  if(!values.pais) errors.pais = errorsAddress.errorPais
-
   // Datos del usuario
   if(!values.comprobanteDomicilio) errors.comprobanteDomicilio = "Domicilio requerido"
   if(!values.telefono) errors.telefono = "Telefono requerido"
   if(!values.correo) errors.correo = "Correo requerido"
+  // Validar correo
   if(!values.nombre) errors.nombre = "Nombre requerido"
   if(!values.genero) errors.genero = "Género requerido"
   if(!values.paisNacimiento) errors.paisNacimiento = "País requerido"
@@ -50,8 +37,23 @@ const validation = (values) => {
   if(!values.rfc) errors.rfc = "RFC requerido"
   if(!values.estadoCivil) errors.estadoCivil = "Estado civil requerido"
   if(!values.correoLegal) errors.correoLegal = "Correo legal requerido"
+  // Validar correo
   if(!values.telefonoLegal) errors.telefonoLegal = "Teléfono requerido"
   if(!values.documentoIdentificacion) errors.documentoIdentificacion = "Documento requerido"
+
+  // Direccion de usuario
+  if(!values.calle) errors.calle = errorsAddress.errorCalle
+  if(!values.noExterior) errors.noExterior = errorsAddress.errorNoExterior 
+  if(!values.noInterior) errors.noInterior = errorsAddress.errorNoInterior
+  if(!values.codigoPostal) errors.codigoPostal = errorsAddress.errorCodigoPostal
+  if(!values.colonia) errors.colonia = errorsAddress.errorColonia
+  if(!values.ciudad) errors.ciudad = errorsAddress.errorCiudad
+  if(!values.estado) errors.estado = errorsAddress.errorEstado
+  if(!values.pais) errors.pais = errorsAddress.errorPais
+
+  // Cuenta de banco
+  if (!values.banco) errors.banco = "Bango obligatorio";
+  if (!values.claveBanco) errors.claveBanco = "Clave de bando obligatoria";
 
   return errors;
 };

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { Formik } from "formik";
 
 // Archuvos que componen el formulario completo
@@ -229,7 +228,7 @@ export default function Form(props) {
           />
           <hr />
           <button type="submit" className="btn btn-primary">
-            "Guardar"
+            Guardar
           </button>
         </form>
       )}

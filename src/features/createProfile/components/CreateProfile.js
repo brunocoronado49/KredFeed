@@ -1,4 +1,3 @@
-import "../style/createProfile.css";
 import Form from "./Form";
 
 export default function CreateProfile(props) {
