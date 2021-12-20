@@ -12,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Nav title={title} />
       <div className="container p-4">
+        {/* Usamos router para las paginaciones de la app */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/createProfile" element={<CreateProfile />} />

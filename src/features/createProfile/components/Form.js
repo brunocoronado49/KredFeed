@@ -9,6 +9,7 @@ import UserAddress from "./UserAddress";
 import BancAccount from "./BancAccount";
 import errorsFile from "../../../resources/errorsFile";
 
+// Los datos van a contener los campos del formulario
 export default function Form(props) {
   const [data, setData] = useState({
     razonSocial: "",
@@ -57,15 +58,20 @@ export default function Form(props) {
     setData({
       ...data,
       [event.target.name]: event.target.value,
+      // Asigna los nuevos valores a los datos despues de hacer una copia
     });
   };
 
   return (
+    // Usamos formik para validar los datos
     <Formik
+      // como valores iniciales les pasamos los datos vacíos
       initialValues={ data }
 
+      // aqui se manejan los errores de cada campo que estan en el archivo de errores 
       validate={ errorsFile }
 
+      // Al hacer submit se envían los datos y se guardan en la data
       onSubmit={(values, { resetForm }) => {
         alert(JSON.stringify(values, null, 2));
         console.log(values);
@@ -75,11 +81,12 @@ export default function Form(props) {
       {({
         values,
         errors,
-        touched,
         handleBlur,
         handleSubmit,
         handleChange,
       }) => (
+        // En cada componente (inputs del formulario) se mandan los parámetros desde formik 
+        // para hacer las validaciones de cada uno y guardar la data que se mande
         <form onSubmit={handleSubmit}>
           <h1>{data.ciudad}</h1>
           <CompanyData
